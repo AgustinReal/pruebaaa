@@ -1,0 +1,54 @@
+<div class="Paises">
+    <div class="container">
+
+        <label for="continenteTxt" class="form-label">Continente</label>
+        <br>
+        <button  class="btn btn-dark m-2" (click)="capturar('America')" >America</button>
+        <button  class="btn btn-dark m-2" (click)="capturar('Europa')" >Europa</button>
+        <button  class="btn btn-dark m-2" (click)="capturar('Africa')" >Africa</button>
+        <br>
+        <div class="container" *ngIf="boolSePresiono">
+
+            <p style="color: rgb(202, 11, 11);">Debe seleccionar un continente</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div *ngIf="verSeleccion == 'America'">
+            <ul>
+                <li *ngFor="let Paises of arrayPaisesAmerica">
+    
+                    <button class="btn btn-dark m-2" (click)="TocarPais(Paises)">{{Paises.nombre}}
+                        <img width="32px" height="32px" [src]="Paises.imagen" alt="Bandera: {{Paises.nombre}}">
+                    </button>
+                </li>
+            </ul>
+        </div>
+    
+        <div *ngIf="verSeleccion == 'Africa'">
+            <ul>
+                <li *ngFor="let Paises of arrayPaisesAfrica">
+                    <button class="btn btn-dark m-2" (click)="TocarPais(Paises)">{{Paises.nombre}}
+                        <img width="32px" height="32px" [src]="Paises.imagen" alt="Bandera: {{Paises.nombre}}">
+                    </button>
+                </li>
+            </ul>
+        </div>
+    
+        <div *ngIf="verSeleccion == 'Europa'">
+            <ul>
+                <li *ngFor="let Paises of arrayPaisesEuropa">
+                    <button class="btn btn-dark m-2" (click)="TocarPais(Paises)">{{Paises.nombre}}
+                        <img width="32px" height="32px" [src]="Paises.imagen" alt="Bandera: {{Paises.nombre}}">
+                    </button>
+                </li>
+            </ul>
+        </div> 
+
+        <br>
+        <div class="container" *ngIf="boolSePresiono2 && (verSeleccion == 'America' || verSeleccion == 'Europa' || verSeleccion == 'Africa')">
+
+            <p style="color: rgb(202, 11, 11);">Debe seleccionar un pais</p>
+        </div>
+    </div>
+</div>

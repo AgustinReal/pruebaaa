@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "simuPractica2",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+<div class="bg-primary d-flex">
+    <div class="container">
+        <div class="row gx-5 justify-content-center align-items-center">
+            <div class="col-12 text-center">
+                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">¿Quién soy?</span></h2>
+                <h2>
+                    <img [src]="jsonApi.avatar_url" alt="Avatar">
+                </h2>
+                <p class="lead fw-light mb-4">Mi nombre es {{jsonApi.name}}</p>
+                <p class="lead fw-light mb-4">Biografia: {{jsonApi.bio}}</p>
+
+
+                <a class="btn btn-dark" href="{{jsonApi.html_url}}">Git hub</a>
+            </div>
+        </div>
+    </div>
+</div>

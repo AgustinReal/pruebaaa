@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="row g-4">
+        <div class=" col-12">
+
+            <h4 class="mb-3">DATOS REPARTIDOR</h4>
+
+            <form  action="#" [formGroup]="formularioEncuesta">
+                <div class="row g-3">
+                    <div class="col-sm-12">
+                        <label for="nombreTxt" class="form-label">Nombre</label>
+                        <input formControlName="nombreTxt" type="text" class="form-control" id="nombreTxt" placeholder="Ingrese su nombre" value="" required="">
+
+                        <span
+                            *ngIf="formularioEncuesta.controls['nombreTxt'].errors?.['required'] && formularioEncuesta.controls['nombreTxt'].touched"
+                            class="text-danger">El nombre es obligatorio
+                        </span>
+                        <span *ngIf="formularioEncuesta.controls['nombreTxt'].errors?.['pattern']" class="text-danger">
+                            El nombre debe contener solo letras
+                        </span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['nombreTxt'].errors?.['containsSpaces'] && formularioEncuesta.controls['nombreTxt'].touched"
+                            class="text-danger">El nombre no puede contener espacios vacios
+                        </span>
+                    </div>
+        
+                    <div class="col-12">
+                        <label for="edadTxt" class="form-label">Edad</label>
+                        <input formControlName="edadTxt" type="text" class="form-control" id="edadTxt"
+                            placeholder="Ingrese su edad" value="" required="">
+    
+                        <span
+                            *ngIf="formularioEncuesta.controls['edadTxt'].errors?.['required'] && formularioEncuesta.controls['edadTxt'].touched"
+                            class="text-danger">La edad es obligatorio</span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['edadTxt'].errors?.['containsSpaces'] && formularioEncuesta.controls['edadTxt'].touched"
+                            class="text-danger">La edad no puede contener espacios vacios</span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['edadTxt'].errors?.['min'] && formularioEncuesta.controls['edadTxt'].touched"
+                            class="text-danger">La edad mínima es 18
+                        </span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['edadTxt'].errors?.['max'] && formularioEncuesta.controls['edadTxt'].touched"
+                            class="text-danger">La edad maxima es 99
+                        </span>
+                        <span *ngIf="formularioEncuesta.controls['edadTxt'].errors?.['pattern']" class="text-danger">
+                            La edad debe contener solo numeros</span>
+                    </div>
+        
+                    <div class="col-12">
+                        <label for="dniTxt" class="form-label">DNI</label>
+                        <input formControlName="dniTxt" type="text" class="form-control" id="dniTxt" placeholder="Ingrese el DNI" value="" required="">
+
+                        <span
+                            *ngIf="formularioEncuesta.controls['dniTxt'].errors?.['required'] && formularioEncuesta.controls['dniTxt'].touched"
+                            class="text-danger">El DNI es obligatorio</span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['dniTxt'].errors?.['containsSpaces'] && formularioEncuesta.controls['dniTxt'].touched"
+                            class="text-danger">El DNI no puede contener espacios vacios</span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['dniTxt'].errors?.['minlength'] && formularioEncuesta.controls['dniTxt'].touched"
+                            class="text-danger">La DNI mínima es 1000000
+                        </span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['dniTxt'].errors?.['maxlength'] && formularioEncuesta.controls['dniTxt'].touched"
+                            class="text-danger">La DNI maxima es 44000000
+                        </span>
+                        <span *ngIf="formularioEncuesta.controls['dniTxt'].errors?.['pattern']" class="text-danger">
+                            El DNI debe contener solo numeros</span>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="capacidadTransporteTxt" class="form-label">Capacidad de transporte</label>
+                        <input formControlName="capacidadTransporteTxt" type="text" class="form-control" id="capacidadTransporteTxt" placeholder="Ingrese la capacidad de transporte" value="" required="">
+
+                        <span
+                            *ngIf="formularioEncuesta.controls['capacidadTransporteTxt'].errors?.['required'] && formularioEncuesta.controls['capacidadTransporteTxt'].touched"
+                            class="text-danger">La capacidad de transporte es obligatorio</span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['capacidadTransporteTxt'].errors?.['containsSpaces'] && formularioEncuesta.controls['capacidadTransporteTxt'].touched"
+                            class="text-danger">La capacidad de transporte no puede contener espacios vacios</span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['capacidadTransporteTxt'].errors?.['min'] && formularioEncuesta.controls['capacidadTransporteTxt'].touched"
+                            class="text-danger">La capacidad mínima es 0
+                        </span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['capacidadTransporteTxt'].errors?.['max'] && formularioEncuesta.controls['capacidadTransporteTxt'].touched"
+                            class="text-danger">La capacidad maxima es 100
+                        </span>
+                        <span *ngIf="formularioEncuesta.controls['capacidadTransporteTxt'].errors?.['pattern']" class="text-danger">
+                            La capacidad de transporte debe contener solo numeros</span>
+                    </div>
+
+                    <div class="col">
+                        <label for="unidadPropia" class="form-label">Es unidad Propia</label>
+                        <input formControlName="unidadPropia" type="text" readonly class="form-control" 
+                        id="unidadPropia" placeholder="Seleccionar" value="" required="">
+                        <br>
+                        <div>
+                            <button type="button" (click)="IndicarBool(true)" class="btn-dark m-2">SI</button>
+                            <button type="button" (click)="IndicarBool(false)" class="btn-dark m-2">NO</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center" >
+                    <button type="button" [disabled]="this.formularioEncuesta.invalid" (click)=" AgregarRepartidor()" class="btn btn-outline-warning m-1  boton">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    

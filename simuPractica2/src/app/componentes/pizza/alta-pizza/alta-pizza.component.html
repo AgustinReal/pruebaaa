@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="row g-4">
+        <div class=" col-12">
+
+            <h4 class="mb-3">ALTA DE PIZZA</h4>
+
+            <form  action="#" [formGroup]="formularioEncuesta">
+                <div class="row g-3">
+                    <div class="col-sm-12">
+                        <label for="nombreTxt" class="form-label">Nombre</label>
+                        <input formControlName="nombreTxt" type="text" class="form-control" id="nombreTxt" placeholder="Ingrese su nombre" value="" required="">
+
+                        <span
+                            *ngIf="formularioEncuesta.controls['nombreTxt'].errors?.['required'] && formularioEncuesta.controls['nombreTxt'].touched"
+                            class="text-danger">El nombre es obligatorio
+                        </span>
+                        <span *ngIf="formularioEncuesta.controls['nombreTxt'].errors?.['pattern']" class="text-danger">
+                            El nombre debe contener solo letras
+                        </span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['nombreTxt'].errors?.['containsSpaces'] && formularioEncuesta.controls['nombreTxt'].touched"
+                            class="text-danger">El nombre no puede contener espacios vacios
+                        </span>
+                    </div>
+        
+                    <div class="col-12">
+                        <label for="ingredientesTxt" class="form-label">Ingredientes</label>
+                        <input formControlName="ingredientesTxt" type="text" class="form-control" id="ingredientesTxt" placeholder="Ingrese los ingredientes" value="" required="">
+                        <span
+                            *ngIf="formularioEncuesta.controls['ingredientesTxt'].errors?.['required'] && formularioEncuesta.controls['ingredientesTxt'].touched"
+                            class="text-danger">Los ingredientes son obligatorio
+                        </span>
+                        <span *ngIf="formularioEncuesta.controls['ingredientesTxt'].errors?.['pattern']" class="text-danger">
+                            Los ingredientes deben contener solo letras
+                        </span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['ingredientesTxt'].errors?.['containsSpaces'] && formularioEncuesta.controls['ingredientesTxt'].touched"
+                            class="text-danger">Los ingredientes no puede contener espacios vacios
+                        </span>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="precioTxt" class="form-label">Precio</label>
+                        <input formControlName="precioTxt" type="text" class="form-control" id="precioTxt" placeholder="Ingrese el precio" value="" required="">
+
+                        <span
+                            *ngIf="formularioEncuesta.controls['precioTxt'].errors?.['required'] && formularioEncuesta.controls['precioTxt'].touched"
+                            class="text-danger">El precio es obligatorio</span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['precioTxt'].errors?.['containsSpaces'] && formularioEncuesta.controls['precioTxt'].touched"
+                            class="text-danger">El precio no puede contener espacios vacios</span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['precioTxt'].errors?.['min'] && formularioEncuesta.controls['precioTxt'].touched"
+                            class="text-danger">La precio mínima es 1
+                        </span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['precioTxt'].errors?.['max'] && formularioEncuesta.controls['precioTxt'].touched"
+                            class="text-danger">La precio maxima es 100000
+                        </span>
+                        <span *ngIf="formularioEncuesta.controls['precioTxt'].errors?.['pattern']" class="text-danger">
+                            El precio debe contener solo numeros</span>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="pesoTxt" class="form-label">Peso</label>
+                        <input formControlName="pesoTxt" type="text" class="form-control" id="pesoTxt" placeholder="Ingrese el peso" value="" required="">
+
+                        <span
+                            *ngIf="formularioEncuesta.controls['pesoTxt'].errors?.['required'] && formularioEncuesta.controls['pesoTxt'].touched"
+                            class="text-danger">El peso es obligatorio</span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['pesoTxt'].errors?.['containsSpaces'] && formularioEncuesta.controls['pesoTxt'].touched"
+                            class="text-danger">El peso no puede contener espacios vacios</span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['pesoTxt'].errors?.['minlength'] && formularioEncuesta.controls['pesoTxt'].touched"
+                            class="text-danger">La peso mínima es 500
+                        </span>
+                        <span
+                            *ngIf="formularioEncuesta.controls['pesoTxt'].errors?.['maxlength'] && formularioEncuesta.controls['pesoTxt'].touched"
+                            class="text-danger">La peso maxima es 1000
+                        </span>
+                        <span *ngIf="formularioEncuesta.controls['pesoTxt'].errors?.['pattern']" class="text-danger">
+                            El peso debe contener solo numeros</span>
+                    </div>
+
+                </div>
+
+                <div class="d-flex justify-content-center" >
+                    <button type="button" [disabled]="this.formularioEncuesta.invalid" (click)=" AgregarPizza()" class="btn btn-outline-warning m-1  boton">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

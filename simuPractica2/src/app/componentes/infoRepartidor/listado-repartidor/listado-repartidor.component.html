@@ -1,0 +1,26 @@
+<div class="container py-4 tablet">
+    <table class="table table-dark table-striped  tableUno">
+        <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NOMBRE</th>
+              <th scope="col">DNI</th>
+              <th scope="col">EDAD</th>
+              <th scope="col">CAPACIDAD DE TRANSPORTE</th>
+              <th scope="col">UNIDAD PROPIA</th>
+              <th scope="col">ORIGEN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let producto of arrayRepartidores; index as i" (click)="SeleccionarPeliculaTabla(producto)">
+              <td>{{i+1}}</td>
+              <td>{{producto.nombre}}</td>
+              <td>{{producto.dni}}</td>
+              <td>{{producto.edad}}</td>
+              <td>{{producto.capacidad}}</td>
+              <td>{{producto.unidadPropia}}</td>
+              <td><img src="{{producto.pais.imagen}}" alt="" height="120px" width="150px"></td>
+            </tr> 
+          </tbody>
+    </table>
+</div>

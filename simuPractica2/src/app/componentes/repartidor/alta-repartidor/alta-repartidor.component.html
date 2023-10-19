@@ -1,0 +1,12 @@
+<div class="principal row g-5" >
+
+    <h1 style="text-align: center;">ALTA PRODUCTO</h1>
+ 
+     <div class="col-md-5 col-lg-4 order-md-last">
+         <app-listadopaises (eventPais)="atrapado($event)"> </app-listadopaises>
+     </div>
+ 
+     <div class="col-md-7 col-lg-8">
+         <app-formulario [pais]="paisRecuperado"> </app-formulario>
+     </div>
+</div>  

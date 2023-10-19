@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sprintuno-e6089": {
+      "hosting": {
+        "simuPractica2": [
+          "sprintuno-e6089"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sprintuno-e6089"
+  }
+}
